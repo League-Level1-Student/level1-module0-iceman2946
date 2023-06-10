@@ -1,5 +1,7 @@
 package _01_methods._1_houses;
 
+import java.util.Random;
+
 import org.jointheleague.graphical.robot.Robot;
 
 /*
@@ -13,16 +15,59 @@ public class Houses {
 		
 		rob.moveTo(50, 450);
 		rob.penDown();
-        for(int x=0; x<10; x++) {
-        	house();
+		Random ran= new Random();
+		Random ranColor=new Random();
+        for(int x=0; x<9; x++) {
+        	String size= "";
+        	String color= "";
+        	int number= ran.nextInt(3);
+        	int numCol= ran.nextInt(3);
+        	if(number==0) {
+        		size="small";
+        	}
+        	if(number==1) {
+        		size="medium";
+        	}
+        	if(number==2) {
+        		size="large";
+        	}
+        	if (numCol==0) {
+        		color= "red";
+        	}
+        	if(numCol==1) {
+        		color= "green";
+        	}
+        	if(numCol==2) {
+        		color= "blue";
+        	}
+        	house(size,color);
         }
 	}
-	void house () {
-			rob.move(100);
-			rob.turn(90);
-			rob.move(30);
-			rob.turn(90);
-			rob.move(100);
+	void house (String size,String color) {
+			int height=120;
+			if(size.equals("small")) {
+				height=60;
+			}
+			if(size.equals("large")) {
+				height=250;
+			}
+			if (size.equals("medium")) {
+				height=120;
+			}
+			if(color.equals("red")) {
+				rob.setPenColor(255,0,0);
+			}
+			if(color.equals("green")) {
+				rob.setPenColor(0,255,0);
+			}
+			if(color.equals("blue")) {
+				rob.setPenColor(0,0,255);
+			}
+			rob.move(height);
+			rob.turn(45);
+			rob.move(20);
+			rob.turn(45);
+			rob.move(height);
 			rob.turn(-90);
 			rob.setPenWidth(15);
 			rob.setPenColor(0,255,0);
