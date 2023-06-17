@@ -21,7 +21,7 @@ public class Houses {
         	String size= "";
         	String color= "";
         	int number= ran.nextInt(3);
-        	int numCol= ran.nextInt(3);
+        	int numCol= ranColor.nextInt(3);
         	if(number==0) {
         		size="small";
         	}
@@ -40,16 +40,13 @@ public class Houses {
         	if(numCol==2) {
         		color= "blue";
         	}
-        	house(size,color);
+        	drawPointyRoof(size,color);
         }
 	}
-	void house (String size,String color) {
-			int height=120;
+	static int height= 120;
+	void drawPointyRoof(String size, String color) {
 			if(size.equals("small")) {
 				height=60;
-			}
-			if(size.equals("large")) {
-				height=250;
 			}
 			if (size.equals("medium")) {
 				height=120;
@@ -63,10 +60,17 @@ public class Houses {
 			if(color.equals("blue")) {
 				rob.setPenColor(0,0,255);
 			}
+			if(size.equals("large")) {
+				height=250;
+				drawFlatRoof();
+			}
+			    
 			rob.move(height);
-			rob.turn(45);
-			rob.move(20);
-			rob.turn(45);
+			rob.turn(60);
+			rob.move(15);
+			rob.turn(60);
+			rob.move(15);
+			rob.turn(60);
 			rob.move(height);
 			rob.turn(-90);
 			rob.setPenWidth(15);
@@ -77,4 +81,19 @@ public class Houses {
 			rob.setPenWidth(0);
 		
 	}
+	void drawFlatRoof() {
+		rob.move(height);
+		rob.turn(90);
+		rob.move(20);
+		rob.turn(90);
+		rob.move(height);
+		rob.turn(-90);
+		rob.setPenWidth(15);
+		rob.setPenColor(0,255,0);
+		rob.move(20);
+		rob.turn(-90);
+		rob.setPenWidth(0);
+		return;
+	}
+	
 }
