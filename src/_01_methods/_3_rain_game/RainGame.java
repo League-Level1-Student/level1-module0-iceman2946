@@ -66,7 +66,13 @@ public class RainGame extends PApplet {
 
     @Override
     public void draw() {
-    	background(0,0,255);
+    	background(0,255,0);
+    	if(mousePressed) {
+    	    ellipse(x,y,20,20);
+    	}
+    	
+    		
+    	
     }
 
     static public void main(String[] args) {
