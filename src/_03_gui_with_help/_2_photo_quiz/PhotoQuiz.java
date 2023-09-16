@@ -1,4 +1,4 @@
-package _03_gui_with_help._2_photo_quiz;
+                      package _03_gui_with_help._2_photo_quiz;
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2021
  *    Level 1
@@ -26,21 +26,25 @@ public class PhotoQuiz {
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address” )
-
+		String image= "https://images.squarespace-cdn.com/content/v1/5d4428ffacde33000191b0ff/1661961993868-ANRFVJUHTX08YTGE9FYJ/image-asset.jpeg?format=2500w";
 		// 2. create a variable of type "Component" that will hold your image
-
+		Component component;
 		// 3. use the "createImage()" method below to initialize your Component
-
+		component= createImage(image);
 		// 4. add the image to the quiz window
-
+		quizWindow.add(component);
 		// 5. call the pack() method on the quiz window
-
+		quizWindow.pack();
 		// 6. ask a question that relates to the image
-
+		String answer1= JOptionPane.showInputDialog("Where is this monument at?");
 		// 7. print "CORRECT" if the user gave the right answer
-
+		if(answer1.equals("Washington DC")) {
+			System.out.println("CORRECT");
+		}
 		// 8. print "INCORRECT" if the answer is wrong
-
+		else {
+			System.out.println("INCORRECT");
+		}
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
 
