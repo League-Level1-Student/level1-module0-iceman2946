@@ -1,5 +1,7 @@
 package _03_gui_with_help._4_body_part_quiz;
 
+import java.awt.Dimension;
+
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2021
  *    Level 1
@@ -51,9 +53,9 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+		int score=0;
 		// 2. Set the size of the window in the initializeGui() method 
-
+		
 		// 4. Ask the user who this person is and store their answer
 		String guess = JOptionPane.showInputDialog("who is this?");
 

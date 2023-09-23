@@ -1,10 +1,11 @@
-                      package _03_gui_with_help._2_photo_quiz;
+package _03_gui_with_help._2_photo_quiz;
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2021
  *    Level 1
  */
 
 import java.awt.Component;
+import java.awt.MenuComponent;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -47,17 +48,24 @@ public class PhotoQuiz {
 		}
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
-
+		quizWindow.remove(component);
 		// 10. find another image and create it (might take more than one line
 		// of code)
-
+		String image2= "https://a.cdn-hotels.com/gdcs/production152/d1609/fb5c78a2-aef9-4606-808e-86c39d311e94.jpg";
+		component= createImage(image2);
 		// 11. add the second image to the quiz window
-
+		quizWindow.add(component);
 		// 12. pack the quiz window
-
+		quizWindow.pack();
 		// 13. ask another question
-
+		String answer2= JOptionPane.showInputDialog("What city in the West Coast is this?");
 		// 14+ check answer, say if correct or incorrect, etc.
+		if(answer2.equals("Sacramento")) {
+			System.out.println("CORRECT");
+		}
+		else {
+			System.out.println("INCORRECT");
+		}
 
 	}
 
